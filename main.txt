@@ -1,0 +1,123 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    main.txt                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/06 16:17:30 by cdomet-d          #+#    #+#              #
+#    Updated: 2023/11/09 11:48:27 by cdomet-d         ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
+
+//ft_isalpha
+int     main(void)
+i{
+        int     test;
+
+        test = '!';
+        printf("%d", isalpha(test));
+}
+
+//ft_isdigit
+int     main(void)
+{
+        int     test;
+
+        test = ' ';
+        printf("%d", ft_isdigit(test));
+}
+
+// ft_isalnum.c
+int     main(void)
+{
+        int     test;
+
+        test = '@';
+        printf("%d", ft_isalnum(test));
+}
+
+// ft_isascii
+int     main(void)
+{
+        int     test;
+
+        test = 189;
+        printf("%d", ft_isascii(test));
+}
+
+// ft_isprint
+int     main(void)
+{
+        int     test;
+
+        test = 32;
+        printf("%d", ft_isprint(test));
+}
+
+// ft_strlen
+int     main(int argc, const char *argv[])
+{
+        if (argc >= 2)
+                printf("%ld", ft_strlen(argv[1]));
+}
+
+// ft_memset
+int     main(int argc, char *argv[])
+{
+        if (argc >= 2)
+                printf("%s\n", (char *)ft_memset(argv[1], 'a', 5));
+}
+
+// ft_bzero
+int     main(int argc, char *argv[])
+{
+//        if (argc >= 2)
+        (void)argc;
+        {
+                //ft_bzero(argv[1], 2);
+                //bzero(argv[1], 2);
+                printf("%s\n", argv[1]);
+        }
+}
+
+// ft_atoi
+int	main(int argc, char *argv[])
+{
+	if (argc >= 2)
+		printf("%d", ft_atoi(argv[1]));
+}
+// ft_strlcpy
+int	main(int argc, char *argv[])
+{
+	char	dst[15];
+	if (argc >= 2)
+	{
+		printf("size is = %ld\n", ft_strlcpy(dst, argv[1], 15));
+	}
+	printf("%s", dst);
+}
+
+// ft_memcpy
+{
+	char	dest[10];
+
+	if (argc >= 2)
+	{
+		ft_memcpy(dest, argv[1], 9);
+		printf("ft_memcpy : %s\n", dest);
+		printf("ft_memcpy : %ld\n", strlen(dest));
+		memcpy(dest, argv[2], 9);
+		printf("memcpy : %s\n", dest);
+		printf("memcpy : %ld\n", strlen(dest));
+
+	}
+}
+// ft_memmove
+int	main(void)
+{
+	char 	src[10] = "saucisse";
+
+	printf("memmove : dest = %s\n", (char *)memmove((void *)&src[9], (void *)src, 1));
+	printf("ft_memmove : dest = %s\n", (char *)ft_memmove((void *)&src[9], (void *)src, 1));
+} 
