@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 12:25:07 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/10 14:45:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/10 15:29:56 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/10 15:30:09 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *s, int c, size_t n)
+void *ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
 
-	i = 0;
-	while (i < n)
-	{
-		((char *)s)[i] = c;
-		i++;
-	}
-	return (s);
 }
