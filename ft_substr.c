@@ -6,7 +6,7 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:30:23 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/16 18:12:06 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/17 10:09:37 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,21 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t		i;
+	size_t		sub_len;
 	char		*substr;
 
-	if (!s || !len)
+	i = 0;
+	if (!s || !len || !s[i])
 		return (ft_calloc(1, sizeof (char)));
-	if (ft_strlen(s) <= start)
+	if (start >= ft_strlen(s))
 		return (ft_calloc(1, sizeof (char)));
-	i = start;
-	while (s[i] && i < len)
-		i++;
-	//printf("i = %lu\n", i);
-	substr = ft_calloc(i + 1, sizeof (char));
-	//printf("substr len %lu\n", ft_strlen(substr) + 1);
+	sub_len = ft_strlen(s) - start;
+	if (sub_len > len)
+		sub_len = len;
+	substr = ft_calloc(sub_len + 1, sizeof (char));
 	if (!substr)
 		return (NULL);
-	i = 0;
 	while (s[start] && i < len)
-	{
-		substr[i] = s[start];
-		i++;
-		start++;
-	}
+		substr[i++] = s[start++];
 	return (substr);
 }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_substr("hola", 2, 1));
-// }

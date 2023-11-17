@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 11:56:09 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/17 16:00:00 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/17 11:36:50 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/17 15:23:09 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
+	int		end;
 
 	i = 0;
-	j = 0;
-	if (!dst || !src || size == 0)
-		return (i + ft_strlen(src));
-	while (dst[i] && i < size)
+	if (!s1 || !set)
+		return (NULL);
+	while (ft_strchr(set, (int)s1[i]))
 		i++;
-	if (i < size)
-	{
-		while (src[j] && (i + j) < size - 1)
-		{
-			dst[i + j] = src[j];
-			j++;
-		}
-		dst[i + j] = '\0';
-	}
-	return (i + ft_strlen(src));
+	j = ft_strlen(s1);
+	while (ft_strchr(set, (int)s1[j]))
+		j--;
+	end = j - i + 1;
+	return (ft_substr(s1, i, end));
 }

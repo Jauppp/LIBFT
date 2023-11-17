@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 11:56:09 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/17 16:00:00 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/17 10:49:51 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/17 16:08:59 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
+	int		strjoin_len;
+	int		i;
+	int		j;
+	char	*strjoin;
 
+	if (!s1 || !s2)
+		return (NULL);
+	strjoin_len = ft_strlen(s1) + ft_strlen(s2);
+	strjoin = ft_calloc(strjoin_len + 1, sizeof (char));
+	if (!strjoin)
+		return (NULL);
 	i = 0;
 	j = 0;
-	if (!dst || !src || size == 0)
-		return (i + ft_strlen(src));
-	while (dst[i] && i < size)
-		i++;
-	if (i < size)
-	{
-		while (src[j] && (i + j) < size - 1)
-		{
-			dst[i + j] = src[j];
-			j++;
-		}
-		dst[i + j] = '\0';
-	}
-	return (i + ft_strlen(src));
+	while (s1[j])
+		strjoin[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		strjoin[i++] = s2[j++];
+	return (strjoin);
 }

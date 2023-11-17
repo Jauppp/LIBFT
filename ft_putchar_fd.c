@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 11:56:09 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/17 16:00:00 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/17 17:46:33 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/17 18:05:31 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (!dst || !src || size == 0)
-		return (i + ft_strlen(src));
-	while (dst[i] && i < size)
-		i++;
-	if (i < size)
-	{
-		while (src[j] && (i + j) < size - 1)
-		{
-			dst[i + j] = src[j];
-			j++;
-		}
-		dst[i + j] = '\0';
-	}
-	return (i + ft_strlen(src));
+	write(fd, &c, 1);
 }
