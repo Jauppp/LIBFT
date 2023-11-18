@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	int		next_word;
 	char	**arr;
 
-	if (!s || s[0] == 0)
+	if (!s || !s[0])
 		return (ft_calloc(1, sizeof (char *)));
 	nb_words = ft_countwords(s, c);
 	arr = ft_calloc(nb_words + 1, sizeof (char *));
