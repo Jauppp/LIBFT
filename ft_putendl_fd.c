@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 11:57:29 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/18 11:57:29 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/18 11:57:42 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/18 11:57:42 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	nb;
+	int	i;
 
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n *= -1; 
-	}
-	if (n < 9)
-	{
-		nb = '0' + n;
-		write(fd, &nb, 1);
-		return ;
-	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		nb = '0' + (n % 10);
-		write(fd, &nb, 1); 
-	}
+	i = 0;
+	while (s && s[i])
+		write(fd, &s[i++], 1);
+	write(fd, "\n", 1);
 }
