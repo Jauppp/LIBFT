@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 int	ft_isspace(const char *str)
 {
@@ -46,7 +47,7 @@ int	ft_atoi(const char *nptr)
 	sign = ft_issign(nptr, i);
 	if (sign < 0 || nptr[i] == '+')
 		i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (ft_isdigit(nptr[i]))
 	{
 		nbr = nbr * 10 + nptr[i] - 48;
 		if (nbr < 0 && sign < 0)
