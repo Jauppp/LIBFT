@@ -6,11 +6,9 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:14:43 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/08 09:22:53 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/22 17:20:31 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalnum(int c)
 {

@@ -6,13 +6,11 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:56:09 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/17 16:00:00 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/20 14:58:29 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

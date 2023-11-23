@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:12:53 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/20 14:49:18 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/22 10:07:53 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/22 17:16:27 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*lstcpy;
+	t_list	*temp;
+	void	*new_content;
 
-	i = -1;
-	if (!src || !dest || n == 0)
-		return (dest);
-	if (src < dest)
+	if (!f || !del)
+		return (NULL);
+	lstcpy = NULL;
+	while (lst)
 	{
-		while (n > 0)
+		new_content = (*f)(lst->content);
+		temp = ft_lstnew(new_content);
+		if (!temp)
 		{
-			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
-			n--;
+			del(new_content);
+			ft_lstclear(&lstcpy, del);
+			return (NULL);
 		}
+		ft_lstadd_back(&lstcpy, temp);
+		lst = lst->next;
 	}
-	else
-	{
-		while (++i < n)
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-	}
-	return (dest);
+	return (lstcpy);
 }

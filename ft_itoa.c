@@ -6,13 +6,13 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:26:46 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/15 09:54:02 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/23 10:26:24 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_size(long n)
+static int	num_size(long n)
 {
 	int	size;
 	int	sign;
@@ -34,7 +34,7 @@ int	num_size(long n)
 		return (size);
 }
 
-long	is_negative(long n)
+static long	is_negative(long n)
 {
 	n = n * -1;
 	return (n);
@@ -42,11 +42,11 @@ long	is_negative(long n)
 
 char	*ft_itoa(int n)
 {
-	int		size;
-	int		sign;
-	int		temp_nb;
-	long	nb;
-	char	*str;
+	int			size;
+	int			sign;
+	long		temp_nb;
+	long		nb;
+	char		*str;
 
 	nb = (long)n;
 	sign = nb;

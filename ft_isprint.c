@@ -6,11 +6,9 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 08:59:29 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/08 09:23:28 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/22 17:19:28 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

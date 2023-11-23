@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:16:10 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/22 17:22:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/18 11:57:29 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/23 09:40:36 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= '0' && c <= '9')
+	char	nb;
+	long	nbr;
+
+	nbr = (long)n;
+	if (nbr < 0)
 	{
-		return (1);
+		write(fd, "-", 1);
+		nbr *= -1;
 	}
-	else
-		return (0);
+	if (nbr > 9)
+		ft_putnbr_fd(nbr / 10, fd);
+	nb = '0' + (nbr % 10);
+	write(fd, &nb, 1);
 }

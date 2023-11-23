@@ -6,11 +6,9 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:00:16 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/10 15:02:04 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/23 11:01:52 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

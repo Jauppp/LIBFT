@@ -6,7 +6,7 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:49:51 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/17 16:08:59 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/23 10:53:47 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		strjoin_len;
-	int		i;
-	int		j;
-	char	*strjoin;
+	size_t		strjoin_len;
+	size_t		i;
+	size_t		j;
+	char		*strjoin;
 
 	if (!s1 || !s2)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:39:08 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/08 09:20:53 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/22 17:22:11 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c >= 0 && c <= DEL)
 		return (1);
 	else
 		return (0);
