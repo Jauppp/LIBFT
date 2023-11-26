@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:16:10 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/22 17:22:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/21 14:29:26 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/22 16:05:32 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (c >= '0' && c <= '9')
+	t_list	*current;
+
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		return (1);
+		current = (*lst)->next;
+		ft_lstdelone(*lst, (*del));
+		(*lst) = current;
 	}
-	else
-		return (0);
 }

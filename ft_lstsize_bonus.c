@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:16:10 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/22 17:22:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/20 17:56:24 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/21 10:53:35 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
-	if (c >= '0' && c <= '9')
+	size_t		n;
+
+	n = 0;
+	while (lst)
 	{
-		return (1);
+		lst = lst->next;
+		n++;
 	}
-	else
-		return (0);
+	return (n);
 }

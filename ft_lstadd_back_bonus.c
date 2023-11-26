@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:16:10 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/22 17:22:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/21 13:20:31 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/22 09:44:29 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
+	t_list	*temp;
+
+	temp = ft_lstlast(*lst);
+	if (temp)
+		temp->next = new;
 	else
-		return (0);
+		(*lst) = new;
 }

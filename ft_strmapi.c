@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:16:10 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/22 17:22:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/20 10:40:55 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/20 14:33:26 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= '0' && c <= '9')
+	unsigned int	i;
+	unsigned int	len;
+	char			*result;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	len = ft_strlen(s);
+	result = ft_calloc(len + 1, sizeof (char));
+	if (!result)
+		return (NULL);
+	while (s[i])
 	{
-		return (1);
+		result[i] = (*f)(i, s[i]);
+		i++;
 	}
-	else
-		return (0);
+	return (result);
 }

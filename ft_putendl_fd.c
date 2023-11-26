@@ -6,7 +6,7 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 11:57:42 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/18 11:57:42 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/22 17:30:31 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s && s[i])

@@ -6,7 +6,7 @@
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:36:50 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/17 15:23:09 by cdomet-d         ###   ########lyon.fr   */
+/*   Updated: 2023/11/23 10:59:46 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		end;
+	size_t		i;
+	size_t		j;
+	size_t		end;
 
 	i = 0;
 	if (!s1 || !set)

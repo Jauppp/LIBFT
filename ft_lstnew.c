@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdomet-d <cdomet-d@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:16:10 by cdomet-d          #+#    #+#             */
-/*   Updated: 2023/11/22 17:22:35 by cdomet-d         ###   ########lyon.fr   */
+/*   Created: 2023/11/20 14:36:42 by cdomet-d          #+#    #+#             */
+/*   Updated: 2023/11/22 15:18:01 by cdomet-d         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-		return (0);
+	t_list	*temp;
+
+	temp = malloc(1 * sizeof(t_list));
+	if (!temp)
+		return (NULL);
+	temp->content = content;
+	temp->next = NULL;
+	return (temp);
 }
